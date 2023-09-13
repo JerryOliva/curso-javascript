@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function carga()
+        {
+
+          let arreglo=[];
+          let n=parseInt(prompt("Ingrese la cantidad de valores del arreglo"))
+          for(let i=0;i<n;i++)
+          {
+            arreglo.push(parseInt(prompt("Ingrese un valor entero")));
+          }
+          return arreglo;
+        }
+
+        function imp(arreglo)
+        {
+          document.write("Los valores del arreglo son:"+"<br>");
+          for(let i=0;i<arreglo.length;i++)
+          {
+            document.write(arreglo[i]+" ");
+          }
+          document.write("<br>");
+        }
+
+        function suma(arreglo)
+        {
+          let sum=0;
+          for(let v of arreglo)
+          { 
+            sum=sum+v;
+          }
+          return sum;
+        }
+
+        function mayor(arreglo)
+        {
+          let may=arreglo[0];
+          for (let v of arreglo)
+          {
+            if(v>may)
+            {
+              may=v;
+            }
+          }
+          return may
+        }
+
+        function mensaje(message)
+        {
+          alert(message);
+        }
+      
+       
+        mensaje("El siguiente programa resuelve algunos problemas de un arreglo");
+        let arreglo1=carga();
+        document.write("<hr>");
+        imp(arreglo1);
+        document.write("<hr>");
+        document.write("La suma de los valores en el arreglo es "+ suma(arreglo1));
+        document.write("<hr>");
+        let mayo=mayor(arreglo1);
+        document.write("El valor mayor del arreglo es "+mayo);
+
+    </script>
+</body>
+</html>
