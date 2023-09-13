@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function promedio(v1,v2,v3)
+        {
+          return (v1+v2+v3)/3;
+        }
+
+        function cuadrado(valor)
+        {
+          return valor*valor;
+        }
+
+      function carga()
+      {
+        let n1=parseInt(prompt("Ingrese el primer valor entero"));
+        let n2=parseInt(prompt("Ingrese el primer valor entero"));
+        let n3=parseInt(prompt("Ingrese el primer valor entero"));
+        promedio(n1,n2,n3);
+        let n4=parseInt(prompt("Ingrese un valor entero"));
+        cuadrado(n4);
+        document.write("El promedio de los primeros tres valores es "+promedio(n1,n2,n3));
+        document.write("<hr>");
+        document.write("El cuadrado del ultimo valor es "+cuadrado(n4));
+    
+      }
+
+      carga();
+
+      
+
+    </script>
+    
+</body>
+</html>
