@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      //Save 50 random float velocitys of a runner
+        let arreglo=[]
+        const metros=100;
+
+        function loadArray(arreglo)
+        {
+          for(let i=0;i<50;i++)
+          {
+            arreglo.push((Math.random()*60))
+          }
+          return arreglo;
+        }
+
+        //print array with 50 elements
+
+        function printArray(arreglo)
+        {
+          document.write("Runner timing"+"<hr>")
+          for(let v of arreglo)
+          {
+            document.write(v+"<br>")
+          }
+          document.write("<hr>");
+        }
+
+        //Get velocity 
+        
+        function getVelocityAndAverage(arreglo)
+        {
+          document.write("Velocity of runner"+"<hr>")
+          let sum=0;
+          for(let v of arreglo)
+          {
+            
+            let velocity=metros/v;
+            sum=sum+velocity
+            document.write(velocity+" <br>");
+          }
+          let pro=sum/50;
+          document.write("<hr>");
+          document.write("Average velocity is "+pro);
+
+          
+        }
+
+
+        loadArray(arreglo);
+        printArray(arreglo);
+        getVelocityAndAverage(arreglo);
+
+    </script>
+</body>
+</html>
