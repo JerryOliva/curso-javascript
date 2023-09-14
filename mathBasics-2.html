@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+function loadValue()
+{
+  let n1=parseInt(prompt("Ingresa el primer valor"));
+  let n2=parseInt(prompt("Ingresa el segundo valor"));
+  basicOper(n1,n2);
+}
+
+function basicOper(v1,v2)
+{
+  let sum= v1+v2;
+  let rest=v1-v2;
+  let multi=v1*v2;
+  let divi=v1/v2;
+  document.write("La suma de los valores es "+sum+"<br>")
+  document.write("La resta de los valores es "+rest+"<br>");
+  document.write("La multiplicación de los valores es "+multi+"<br> ");
+  document.write("La division de los valores es "+divi+" <br>");
+}
+
+loadValue();
+
+
+
+
+  </script>
+</body>
+</html>
