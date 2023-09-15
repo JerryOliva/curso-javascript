@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+
+  // Conteo de 100 numeros impares y pares con valor aleatorio
+
+   let array1=[];
+   let imparConteo;
+   let parConteo;
+
+   for(let i=0;i<100;i++)
+   {
+    let v=parseInt((Math.floor(Math.random()*100)));
+    array1.push(v);
+    
+   }
+
+   let count=0;
+  
+   imparConteo=function(array1)
+   {
+    for(let v of array1)
+    { 
+      if(v%2==1)
+      {
+        count++;
+      }
+    }
+    return count;
+   }
+
+   let count2=0;
+   parConteo=(array1)=>count2;
+   {
+    for(v of array1)
+    {
+      if(v%2==0)
+      {
+        count2++;
+      }
+    }
+   }
+
+   document.write("La cantidad de numeros pares es "+parConteo(array1));
+   document.write("<hr>");
+   document.write("La cantidad de numeros impares es "+imparConteo(array1));
+
+
+
+    </script>
+</body>
+</html>
