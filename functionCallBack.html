@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+      let filtrar=(arreglo,cb)=>{
+        let newArray=[];
+        for(let v of arreglo)
+        {
+          if(cb(v))
+          {
+            newArray.push(v);
+          }
+        }
+        return newArray;
+      }
+
+      let arreglo=[1,2,10,7,200,6,885,50];
+      let a1= filtrar(arreglo,(v)=>v%2==0);
+      console.log(a1);
+      let a2=filtrar(arreglo,(v)=>v>10);
+      console.log(a2);
+      let a3=filtrar(arreglo,(v)=>v>=10 && v<=200);
+      console.log(a3);
+    </script>
+</body>
+</html>
