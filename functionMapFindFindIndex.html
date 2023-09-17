@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+		let ms = (ms)=>
+		{
+			alert(ms);
+		}
+		ms("Resultados en consola")
+
+		let usuarios =[ ["Bruno", "abc123"],["Donjuan23","lose302"],["Domo","nu23bds"],["grije","rec302-d"]];
+
+		const a1=usuarios.map(c=>c[0]);
+		console.log(a1);
+	
+		
+		const a2=usuarios.map(usu=>[usu[0]," "]);
+	console.log(a2);
+
+	const products=[["peras",33],["almejas",239],["camarones",93]];
+
+	const a3=products.find(producto=>producto[0]=="ostras")
+	if(a3!=undefined)
+	{
+		console.log(a3);
+	}else 
+	{
+		console.log("El producto no se encuentra en la lista")
+	}
+
+	const a4=products.findIndex(producto=>producto[0]=="almejas");
+	if(a4!=-1)
+	{
+		console.log(a4);
+		console.log(products[a4])
+	}
+	else 
+	{
+		console.log("El producto no se encuentra en la lista");
+	}
+	</script>
+</body>
+</html>
