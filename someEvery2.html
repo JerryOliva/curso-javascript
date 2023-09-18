@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+      let a=[]
+      
+      for(let i=0;i<10;i++)
+      {
+        a.push(Math.floor(Math.random()*50))
+        
+      }
+
+
+      let imp=(arra)=>
+      {
+        for(let x of arra)
+        {
+          document.write(x+" ");
+
+        }
+        
+      }
+
+
+      imp(a);
+      document.write("<br>")
+      let hay15=a.some(x=>x==15)
+      if(hay15)
+      {
+        document.write("En el arreglo hay un valor = 15")
+      }
+      else 
+      {
+        document.write("La impresión no genero un valor = 15");
+      }
+
+      document.write("<br>")
+      let men45=a.every(x=>x<45)
+      if(men45)
+      {
+        document.write("Todos los valores son menores de 45");
+      }else 
+      {
+        document.write("Al menos un valor no es menor de 45");
+      }
+     
+
+    
+    </script>
+</body>
+</html>
