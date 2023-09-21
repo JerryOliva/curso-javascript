@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let array=[];
+    for(let i=0;i<4;i++)
+    {
+      array.push([]);
+      for(let k=0;k<3;k++)
+      {
+        let n=parseInt(prompt("Ingrese un valor entero"));
+        array[i].push(n);
+      }
+    }
+
+    let impresion=(array)=>{
+      for(let i of array)
+      {
+        for(let x of i)
+        {
+          document.write(x+" ");
+
+        }
+        
+      }
+      document.write("<hr>");
+    }
+
+    
+
+      let cop=array.slice();
+      for(let i=0;i<array.length;i++)
+      {
+        cop[i]=array[i].slice();
+      }
+      array[0][0]=120;
+  
+   
+    impresion(array);
+    console.log(cop);
+    console.log(array);
+  </script>
+</body>
+</html>

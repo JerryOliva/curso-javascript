@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      
+
+      let cargaArreglo=(array)=>
+      {
+        let cant=parseInt(prompt("Ingrese la cantidad de valores del arreglo:"))
+        for(let i=0;i<cant;i++)
+        {
+          let n=parseInt(prompt("Ingrese un valor entero"));
+          array.push(n);
+        }
+        return array;
+      }
+
+
+      let inAnte=(array)=>
+      {
+        array.splice(-1,0,55);
+        return array;
+      }
+
+      let borrarIns=(array)=>
+      {
+        array.splice(1,1,111)
+        return array;
+      }
+
+      let message=(ms)=>
+      {
+        alert(ms);
+      }
+
+      let a1=[];
+      cargaArreglo(a1);
+      inAnte(a1);
+      message("Impresión en consola");
+      console.log(a1);
+      borrarIns(a1);
+      console.log(a1);
+
+
+    </script>
+</body>
+</html>

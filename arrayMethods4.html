@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+      let cargaArreglo=(array)=>
+      {
+        for(let i=0;i<3;i++)
+        {
+          array.push([]);
+          for(let k=0;k<3;k++)
+          {
+            let n=parseInt(prompt("Ingrese un valor entero"));
+            array[i].push(n);
+          }
+        }
+      }
+
+
+      let copArray=(array,pos)=>
+      {
+        return array[pos].slice();
+        
+      }
+
+
+
+      let array=[];
+      cargaArreglo(array);
+      let arrayv1=copArray(array,2);
+      array[2][0]=1002;
+      console.log(arrayv1);
+      console.log(array);
+
+    </script>
+</body>
+</html>
