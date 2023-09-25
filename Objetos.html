@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+      let producto1={
+
+        descripcion:("Mango"),
+        precio:(23,32),
+        codigo:(12039)
+      }
+
+
+      let producto2= {
+
+        descripcion:("Pavo"),
+        precio:(22,10),
+        codigo:(654)
+
+      }
+
+      let mayorPre=(a,b)=>
+      {
+        let may=a>b? "El producto 1 es más caro":"El producto 2 es mas caro";
+        return may;
+      }
+
+      let aumento=(a,b)=>
+      {
+        let aum1=a+a*.20;
+        let aum2=b+b*.20;
+
+        return [aum1,aum2];
+
+      }
+
+      document.write(mayorPre(producto1.precio,producto2.precio));
+      document.write("<hr>");
+      let [aumento1,aumento2]=aumento(producto1.precio,producto2.precio);
+      document.write("Al aumentar 20% el precio");
+      document.write("<hr>");
+      document.write(aumento1);
+      document.write("<hr>");
+      document.write(aumento2);
+  
+    </script>
+</body>
+</html>

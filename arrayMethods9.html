@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+      let a1=[];
+
+      let alerta=(ms)=>
+      {
+        alert(ms);
+      }
+
+      let cargArray=(array)=>
+      {
+        while(array.length!=50)
+        {
+          let v=(Math.floor(Math.random()*50))+1;
+          if(!array.includes(v))
+          {
+            array.push(v);
+          }
+        }
+      }
+      alerta("Impresión en consola");
+      cargArray(a1);
+      console.log(a1);
+      
+
+    </script>
+</body>
+</html>

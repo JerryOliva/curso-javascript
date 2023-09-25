@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let unir=(array,ser="-")=>
+        {
+            let strung='';
+            
+                for(let x of array)
+                {
+                    
+                 if(x<=array.length)
+                 {
+                    strung=strung+x+ser;
+                 }
+                 else 
+                 {
+                    strung=strung+x;
+                 }
+                }
+            return strung;
+        }
+
+        let posMay=(array)=>
+        {
+            let may=array[0]
+            let pos=0;
+            for(let x of array.entries())
+            {
+             if(x[1]>may);
+             {
+                may=x[1];
+                pos=x[0];
+             }
+                
+            }
+            return pos;
+        }
+
+
+        let valorMay=(array)=>
+        {
+            let may=array[0]
+            let pos=0;
+            
+            for(let x of array.entries())
+            {
+                if(x[1]>may)
+                {
+                may=x[1];
+                
+                }
+
+            }
+           return may;
+           return pos;
+           
+        }
+
+        let a1=[1,2,3,349,39];
+
+      let arreglo=(unir(a1));
+      let mayor=(valorMay(a1));
+      let posMaya=(posMay(a1));
+      console.log(arreglo);
+      console.log(mayor);
+      console.log("La posición del valor mayor es "+posMaya);
+
+
+
+
+
+    </script>
+</body>
+</html>

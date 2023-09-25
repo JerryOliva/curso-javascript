@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      
+      let arreglo1=[12,30,405,50,305,40,305,30,403,103]
+      
+
+      let cincoElementos=(a1)=>
+      {
+        let a2=a1.slice(0,5);
+      
+        return a2;
+      }
+      let cincoElementos2=(a1)=>
+      {
+        let a3=a1.slice(5);
+      
+        return a3;
+      }
+
+      let mayor5Elementos=(a5nuevo)=>
+      {
+        return Math.max(...a5nuevo);
+      
+      }
+      let menor5Elementos=(a5nuevo)=>
+      {
+        return Math.min(...a5nuevo);
+
+      }
+
+      let nuevoArreglo=(a1)=>
+      {
+        let aNuevo=[...a1.slice(0,3),...a1.slice(-3)];
+      return aNuevo;
+      }
+
+      document.write(cincoElementos(arreglo1));
+      let a5nuevo=cincoElementos(arreglo1);
+      document.write("<hr>");
+      document.write("Valor mayor de los 5 elementos es "+mayor5Elementos(a5nuevo));
+      document.write("<hr>");
+      document.write(cincoElementos2(arreglo1));
+      document.write("<hr>");
+      let a5M=cincoElementos2(arreglo1);
+      document.write("Valor menor de los 5 elementos "+menor5Elementos(a5M));
+      document.write("<hr>");
+      document.write("Despues de unir los primeros 3 elementos del segundo arreglo y los ultimos tres del primero");
+      document.write("<hr>");
+      document.write(nuevoArreglo(arreglo1));
+
+
+    </script>
+</body>
+</html>
