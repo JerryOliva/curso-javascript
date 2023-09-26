@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      
+      let player1={
+        nombre:"Cosmica",
+        puntaje: 25,
+        nivel: "profesional"
+      }
+
+      let player2={
+        nombre:"Narciso",
+        puntaje: 1,
+        nivel: "whack league"
+      }
+
+      let imprimir=(players)=>
+      {
+        document.write("Nombre:"+players.nombre+"<br>");
+        document.write("puntos:"+players.puntaje+"<br>");
+        document.write("Nivel:"+players.nivel+"<br>");
+
+      }
+
+      let mayPuntaje=(a,b)=>
+      {
+        let may=0;
+        if(a.puntaje>b.puntaje)
+        {
+          may=[a.nombre+" "+a.puntaje];
+        }
+        else 
+        {
+          may=[b.nombre+" "+b.puntaje];
+        }
+        return may;
+      }
+
+      imprimir(player1);
+      document.write("<hr>");
+      imprimir(player2);
+      document.write("<hr>");
+      document.write("El jugador con alto puntajes es "+mayPuntaje(player1,player2));
+    </script>
+</body>
+</html>

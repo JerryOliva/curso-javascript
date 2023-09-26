@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      
+      const compu1={
+          cpu:"i7",
+          "memoria ram":"16gb"
+        }
+
+
+        let imp=(objeto)=>
+        {
+          for(let info in objeto)
+          {
+            console.log(objeto.cpu);
+            console.log(objeto["memoria ram"]);
+
+          }
+        }
+
+
+
+        imp(compu1);
+        compu1["disco duro"]="1tb"; 
+        imp(compu1); 
+        compu1["sistema operativo"]=prompt("Ingrese el sistema opresivo");
+        imp(compu1);
+        compu1.precio=239;
+        imp(compu1);
+        delete compu1.precio;
+        imp(compu1);
+    </script>
+</body>
+</html>

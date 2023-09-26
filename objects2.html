@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let alumno1={
+
+          nombre: "Isaias",
+          materia: "Quimica",
+          nota1: 8.2,
+          nota2:4.5,
+          nota3:10
+        }
+
+
+        let imprimir=(alumno)=>
+        {
+          document.write("Nombre:"+alumno.nombre+"<br>");
+          document.write("Materia:"+alumno.materia+"<br>");
+          document.write("nota 1:"+alumno.nota1+"<br>");
+          document.write("nota 2:"+alumno.nota2+"<br>");
+          document.write("nota 3:"+alumno.nota3+"<br>");
+
+          document.write("El promedio del alumno es "+promedio(alumno));
+          document.write("<hr>")
+          if(promedio(alumno)>7)
+          {
+            document.write("El alumno será promocionado");
+          }
+          
+        }
+
+
+        let promedio=(alumno)=>
+        {
+        
+          return (alumno.nota1+alumno.nota2+alumno.nota3)/3;
+        }
+
+        imprimir(alumno1)
+    </script>
+</body>
+</html>

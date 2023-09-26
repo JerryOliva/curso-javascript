@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+			const emprendedor={
+				nombre:"Placebo López",
+				direccion:"Azulejos de crista y piedra 32 juarez, Av. jicama",
+				giro:"Publicidad",
+				cantidadEmpleados:20
+
+			}
+
+			const emprendedor2={
+				nombre:"Lucciano peinado",
+				direccion:"sila mimos 22 bolas av. tezontle ",
+				giro:"Ingenio",
+				cantidadEmpleados:1
+
+			}
+
+			let imprimir=(emprendedores)=>
+			{
+				document.write("nombre:"+emprendedores.nombre+"<br>");
+				document.write("dirección:"+emprendedores.direccion+"<br>");
+				document.write("giro:"+emprendedores.giro+"<br>");
+				document.write("cantidad de empleado:"+emprendedores.cantidadEmpleados+"<br>");
+				document.write("<hr>");
+			}
+
+			imprimir(emprendedor);
+			imprimir(emprendedor2);
+
+		</script>
+</body>
+</html>
