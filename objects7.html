@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+			let cargaObjeto=(nom,cod,email)=>
+			{
+				const cliente=
+				{
+					nom,
+					cod,
+					email
+				}
+				return cliente;
+			}
+
+			let impr=(cliente)=>
+			{
+				document.write("codigo:"+cliente.cod+"<br>");
+				document.write("nombre:"+cliente.nom+"<br>");
+				document.write("email:"+cliente.email+"<hr>");
+			}
+
+			let nombre=prompt("Ingrese el nombre de usuario");
+			let codigo=parseInt(prompt("Ingrese el código del producto"));
+			let email=prompt("Ingrese el email");
+
+			let cliente1=cargaObjeto(nombre,codigo,email);
+
+			impr(cliente1);
+		</script>
+</body>
+</html>

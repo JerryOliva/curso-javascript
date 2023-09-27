@@ -18,14 +18,13 @@
         {
           for(let info in objeto)
           {
-            console.log(objeto.cpu);
-            console.log(objeto["memoria ram"]);
+            document.write(info+objeto[info]);
+            
 
           }
+          document.write("<hr>");
         }
-
-
-
+        
         imp(compu1);
         compu1["disco duro"]="1tb"; 
         imp(compu1); 
