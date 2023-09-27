@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        let tablaMultiplicar=
+        {
+        
+        numero:2,
+        terminos:11,
+        imprimir()
+        {
+         document.write("<h1>Tabla de multiplicar del "+this.numero+"</h1>");
+            for(let i=1;i<this.terminos;i++)
+            {
+                document.write(this.numero+"*"+i+"="+(this.numero*i)+"<br>");
+            }
+            document.write("<hr>");
+        }
+        }
+
+        tablaMultiplicar.imprimir();
+        tablaMultiplicar.numero=7;
+        tablaMultiplicar.imprimir();
+        tablaMultiplicar.numero=9;
+        tablaMultiplicar.imprimir();
+    </script>
+    
+</body>
+</html>

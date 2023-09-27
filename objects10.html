@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+			let receta={
+
+				chef:"Jorge Campestre",
+				platillo:"Pipian morita",
+				"Tiempo de preparacion": 60,
+				utencilios:["cuchara sopera","olla express","comal","lanzallamas"],
+				ingredientes:{
+					verduras:["cebolla","ajo","Chile morita"],
+					agua:2,
+					proteinas:"2k de suadero"
+
+				},
+				
+				imprimirPlatillo(){
+					document.write("platillo:"+this.platillo+"<br>")
+				},
+
+				imprimirChef(){
+
+					document.write("La receta la recomienda el chef "+this.chef+"<br>");
+				},
+				imprimirDuracion(){
+					document.write("Duración de preparación: "+receta["Tiempo de preparacion"]+"<br>");
+				},
+				
+				imprimirIngredientes(){
+
+					document.write("proteinas :"+this.ingredientes.proteinas+"<br>");
+					for(let k=0;k<this.ingredientes.verduras.length;k++)
+					{
+						document.write("Verduras: "+this.ingredientes.verduras[k]+" <br>")
+					}
+					
+				
+				}
+				
+			}
+
+			receta.imprimirChef();
+			receta.imprimirPlatillo();
+			receta.imprimirDuracion();
+			receta.imprimirIngredientes();
+
+    </script>
+</body>
+</html>

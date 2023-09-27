@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+			let objeto=(nom,n1,n2,n3)=>
+			{
+				let alumno={
+					nom,
+					n1,
+					n2,
+					n3,
+
+				}
+				return alumno;
+			}
+
+			let carga=()=>
+			{
+				nom=prompt("Ingrese el nombre del alumno");
+				n1=parseFloat(prompt("Ingrese la nota del alumno"));
+				n2=parseFloat(prompt("Ingrese la segunda nota"));
+				n3=parseFloat(prompt("Ingrese la tercera nota"));
+
+				objeto(nom,n1,n2,n3);
+			}
+
+			let imprimir=(alumno)=>
+			{
+				document.write(alumno.nom+"<br>");
+				document.write(alumno.n1+"<br>");
+				document.write(alumno.n2+"<br>");
+				document.write(alumno.n3+"<br>");
+			}
+
+			let promedio=(alumno)=>
+			{
+				let sum=0;
+				sum+=this.n1+this.n2+this.n3;
+				let prom=sum/3
+				document.write("El alumno "+this.nom+" alcanzo un promedio de  "+prom);
+
+			}
+
+			let notasMayores4=(alumno)=>
+			{
+				let cont=0;
+				let notas=[this.n1,this.n2,this.n3];
+				for(let i=0;i<=notas.length;i++)
+				{
+					if(notas[i]>4)
+				{
+					cont++
+					
+				}
+
+				}
+				document.write("La cantidad de notas mayores de 4 es "+cont);
+				
+			}
+
+
+			carga();
+			let alumno1=objeto(nom,n1,n2,n3);
+			imprimir(alumno1);
+			document.write("<hr>");
+			promedio(alumno1);
+			document.write("<hr>");
+			notasMayores4(alumno1);
+
+		</script>
+</body>
+</html>
