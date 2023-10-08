@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+		const paises= [
+			{
+				pais: "Argelia",
+				capital:"Argel",
+				poblacion: 15,
+				moneda:"Dinar",
+				idioma:"Arabe",
+				agricultura:["trigo","avena","cevada"],
+				expectativaVida:{
+					hombres:78,
+					mujeres:76,
+				}
+			},
+		
+			{
+				pais: "México",
+				capital:"Capula",
+				poblacion: 125,
+				moneda:"Peso mexicano",
+				idioma:"Castellano",
+				agricultura:["trigo","avena","maíz"],
+				expectativaVida:{
+					hombres:76,
+					mujeres:79,
+				}
+				
+			},
+			{
+				pais: "Estados unidos",
+				capital:"Washington",
+				poblacion: 255,
+				moneda:"Dolares",
+				idioma:"Ingles americano",
+				agricultura:["trigo","maíz"],
+				expectativaVida:{
+					hombres:80,
+					mujeres:81,
+				}
+				 
+			}
+		]
+
+		let impPaises=(paises)=>
+		{
+			document.write("<h1>Lista de paises</h1>");
+			for (let pais of paises)
+			{
+				document.write("Nombre: "+pais.pais+"<br>");
+				document.write("Capital: "+pais.capital+"<br>");
+				document.write("Moneda: "+pais.moneda+"<br>");
+				document.write("Población: "+pais.poblacion+"<br>")
+				document.write("Idioma: "+pais.idioma+"<br>");
+				document.write("Agricultura: ")
+				for(let i of pais.agricultura)
+				{
+					document.write([i]+" ");
+				}
+				document.write("<br>");
+				document.write("Expectativa de vida hombres: "+pais.expectativaVida.hombres+"<br>");
+				document.write("Expectativa de vida mujeres: "+pais.expectativaVida.mujeres+"<br>");
+				document.write("<hr>");
+			}
+	
+		}
+
+	let mayorPobla=(paises)=>
+	{
+		let poblaMay=paises[0];
+		
+		for(let pais of paises)
+		{
+			if(pais.poblacion>poblaMay.poblacion)
+			{
+				poblaMay=pais
+			}
+		}
+		document.write("Pais con mayor densidad poblacional: "+poblaMay.pais + " población : "+poblaMay.poblacion);
+		document.write("<hr>")
+	}
+
+		impPaises(paises);
+		mayorPobla(paises);
+	
+	</script>
+</body>
+</html>

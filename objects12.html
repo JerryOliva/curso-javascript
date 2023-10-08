@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const lista=[
+            {
+                nombre: "Ana",
+                apellido: "clavel",
+                edad: 33,
+                deporte:"Alpinismo",
+                medallas:[
+                    {
+                    tipo: "oro",
+                    cantidad: 2,
+                }, 
+							{
+								tipo:"bronce",
+								cantidad:1,
+							}]
+            },
+						{
+							nombre: "Ra",
+                apellido: "clave",
+                edad: 322,
+                deporte:"Alpinismo",
+                medallas:[
+                    {
+                    tipo: "oro",
+                    cantidad: 1,
+                }, 
+							{
+								tipo:"plata",
+								cantidad:1,
+							}]
+							
+						},
+						{
+							nombre: "Amas de verdad",
+                apellido: "Futuro",
+                edad: 22,
+                deporte:"Atletismo",
+                medallas:[
+                    {
+                    tipo: "oro",
+                    cantidad: 1,
+                }, 
+							{
+								tipo:"plata",
+								cantidad:1,
+							}]
+						},
+						{
+							nombre: "Poncho",
+                apellido: "porros",
+                edad: 12,
+                deporte:"Fumeteo ",
+                medallas:[
+                    {
+                    tipo: "bronce",
+                    cantidad: 1,
+                }, 
+							{
+								tipo:"plata",
+								cantidad:1,
+							}]
+							
+						}
+        ]
+
+			let imprimirDatos=(lista)=>
+			{
+				//two algorithms can resolve 
+				
+				//lista.forEach(list=>console.log(list))
+				for(let atleta of lista)
+				{
+					console.log(atleta);
+				}
+			}
+			
+			
+
+            // Who won bronce medals? algorythm
+
+            //let bronceMedal=(lista)=>
+            //{
+                //for(let deportista of lista)
+                //{
+                    //for(let medalla of deportista.medallas)
+                    //{
+                        //if(medalla.tipo=="bronce")
+                        //{
+                            //console.log(deportista);
+                        //}
+                    //}
+                //}
+            //}
+
+            // algorythm of medals with method filter, class array
+            let bronceMedal=(lista)=>
+            {
+                const depoBronce=lista.filter(deportista=> deportista.medallas.filter(medalla=>medalla.tipo == "bronce").length==1)
+                console.log(depoBronce);
+            }
+
+
+            //imprimirDatos(lista);
+
+
+            bronceMedal(lista);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+			function Usuario(nombre,clave)
+			{
+				this.nombre= nombre;
+				this.clave= clave;
+				this.imprimir=function()
+				{
+					document.write(this.nombre+" "+this.clave+"<br>");
+				}
+			}
+
+
+			const user=[];
+
+			while (user.length!=3)
+			{
+				let nombre=prompt("Ingrese el nombre de usuario");
+				if(user.some(us=>us.nombre==nombre)
+				)
+			{
+				alert("Ya existe un usuario con el nonbre: "+nombre)
+			}
+			else 
+			{
+				let clave=prompt("Ingrese una clave de usuario");
+				user.push(new Usuario (nombre,clave));
+			}
+			}
+
+
+			user.forEach(usu=>usu.imprimir());
+
+			
+		</script>
+</body>
+</html>

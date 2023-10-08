@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+			
+			
+
+			function Carga(nom,apellido,edad)
+			{
+				this.nom=nom;
+				this.apellido=apellido;
+				this.edad=edad;
+
+				this.imp=function()
+				{
+						document.write(this.nom+" "+this.apellido+" "+this.edad+"<br>");
+				}
+			}
+
+			let persona=[];
+			persona.push (new Carga("Carla","Oviedo",30));
+			persona.push(new Carga("Asencio","rivaldo",23));
+			persona.push(new Carga("Claudia","Gutierrez",26));
+			persona.push(new Carga("Onas","Uner",39));
+			persona.push(new Carga("Dual","Equilibrum",28));
+
+
+			for( let p of persona)
+			{
+				p.imp();
+
+			}
+			 
+			let may=persona[0];
+			for (let p of persona)
+			{
+				if(p.edad>may.edad)
+					{
+						document.write("La persona con mayor edad es: "+p.nom+" "+p.edad);
+					}
+			
+			}
+					
+    </script>
+</body>
+</html>

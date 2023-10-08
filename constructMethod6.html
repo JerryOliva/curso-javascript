@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function Naipe (numero,palo)
+        {
+            this.numero=numero;
+            this.palo=palo;
+        }
+
+        const mazoCartas={
+        
+        mazo:[],
+
+        crear ()
+        {
+            for(let i=1;i<=12;i++)
+            {
+                mazoCartas.mazo.push(new Naipe(i,"oro"));
+                mazoCartas.mazo.push(new Naipe(i,"basto"));
+                mazoCartas.mazo.push(new Naipe(i,"copas"));
+                mazoCartas.mazo.push(new Naipe(i,"espadas"));
+            }
+        },
+
+        imprimir(){
+            for(let carta of mazoCartas.mazo)
+            console.log(carta);
+            
+        },
+        extraer(){
+            mazoCartas.mazo.shift();
+        },
+        cantidad()
+        {
+            console.log(mazoCartas.mazo.length);
+        },
+        mezclar(){
+            this.mazo.sort(()=>0.5-Math.random());
+        }
+        }
+
+        mazoCartas.crear();
+        //mazoCartas.imprimir();
+        mazoCartas.extraer()
+        mazoCartas.mezclar();
+        mazoCartas.imprimir();
+        mazoCartas.cantidad();
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+				let personas=[]
+				
+				function Carga( nom,apellido,edad)
+				{
+					this.nom=nom;
+					this.apellido=apellido;
+					this.edad=edad;
+
+					this.imp= function()
+					{
+						document.write(this.nom+" "+this.apellido+" "+this.edad+("<br>"))
+					}
+				}
+
+				personas.push(new Carga("Isabel","Reina",36));
+				personas.push(new Carga("Ismael","Cuida",66));
+				personas.push(new Carga("Alma","Buena",33));
+				personas.push(new Carga("Calma","Eterna",68));
+				personas.push(new Carga("Don","Coser",69));
+
+				for(let persona of personas)
+				{
+					persona.imp();
+				}
+
+    </script>
+</body>
+</html>

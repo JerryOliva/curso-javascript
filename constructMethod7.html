@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function User (nom,key)
+        {
+            this.nom=nom;
+            this.key=key;
+            this.imp=function()
+            {
+                document.write("Nombre: "+this.nom+" "+"Clave: "+this.key+" "+"<br>");
+            }
+        }
+        
+        const ux=[]
+    
+        let carga=()=>
+        {
+            while(ux.length!=3)
+            {
+                let nom=prompt("Ingrese un nombre de usuario");
+                if(ux.some(nombre=>nombre.nom==nom))
+                {
+                    alert("El usuario "+nom+" ya existe ");
+                }
+                else 
+                {
+                    let key=prompt("Ingrese una clave de usuario");
+                    ux.push(new User(nom,key));
+                }
+            }
+        }
+        
+        carga();
+        ux.forEach(users=>users.imp());
+
+
+    
+    </script>
+</body>
+</html>m
