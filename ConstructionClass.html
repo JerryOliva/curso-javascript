@@ -7,7 +7,46 @@
 </head>
 <body>
     <script>
+
+        class Personas 
+        {
+        
+            constructor(nombre,apellido,edad)
+            {
+                this.nombre=nombre;
+                this.apellido=apellido;
+                this.edad=edad;
+            }
+            
+            imprimir(){
+                document.write(this.nombre+" "+ this.apellido+" "+this.edad+"<br>");
+            }
+
+        }
+
+        let  grupo = [];
+
+         grupo.push(new Personas("Sahir","Roblez",129));
+         grupo.push(new Personas("Karla","Audio",46));
+         grupo.push(new Personas("Alberto","Condor",97));
+
+         let mayGrup=(array)=>
+         {
+            let may=array[0];
+            for(let person of array)
+            {
+                if(person.edad>may.edad)
+                {
+                    may=person.edad;
+                }
+            }
+            document.write("El mayor del grupo es "+may.nombre+" "+may.edad);
+         }
+
+         grupo.forEach(g=>g.imprimir());
+         mayGrup(grupo);
+        
 			
-		</script>
+	</script>
 </body>
 </html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+				const personas = [
+					{
+						nombre:"Luz Jimenez",
+						edad:23
+					},
+					{
+						nombre:"Calel Gluten",
+						edad:40
+					},
+					{
+						nombre:"Conie Rainbow",
+						edad: 33
+					},
+					{
+						nombre:"Crisol Blas",
+						edad:49
+					}
+				]
+
+				let busqueda=(array,nom)=>
+				{
+					// Seek via subcript
+					//for(let i=0;i<=array.length;i++)
+					//{
+						//if(array[i].nombre.toLowerCase().startsWith(nom.toLowerCase()))
+						//{
+							//document.write(array[i].nombre+"<br>");
+						//}
+					//}
+
+					//For of solution
+					//for(let persona of array)
+					//{
+						//if(persona.nombre.toLowerCase().startsWith(nom.toLowerCase())
+						//)
+					//{
+						//document.write(persona.nombre+"<br>");
+					//}
+					//}
+
+					//Solution Via filter method
+					const filtrar=array.filter(n=>n.nombre.toLowerCase().startsWith(nom.toLowerCase()));
+					console.log(filtrar);
+				}
+
+				busqueda(personas,"l");
+				
+    </script>
+</body>
+</html>

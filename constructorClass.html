@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		class Usuario{
+			constructor(nombre,clave)
+			{
+				this.nombre=nombre;
+				this.clave=clave;
+			}
+			imp()
+			{
+				document.write(this.nombre+" "+this.clave+"<hr>");
+			}
+		}
+
+		let users=[];
+
+		let carga=()=>
+		{
+			while(users.length!=4)
+			{
+				let nombre=prompt("Ingrese el nombre de usuario");
+				if(users.some(ux=>ux.nombre==nombre))
+				{
+					alert("El usuario "+nombre+" ya existe");
+				}
+				else 
+				{
+					let clave=prompt("Ingrese un clave de 5 digitos");
+					users.push(new Usuario(nombre,clave));
+				}
+
+			}
+		}
+
+		carga();
+		users.forEach(ux=>ux.imp());
+	</script>
+</body>
+</html>

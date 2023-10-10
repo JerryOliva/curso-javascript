@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+		class Dado{
+			constructor()
+			{
+				this.numero=Math.floor(Math.random()*6)+1;
+			}
+			imprimir()
+			{
+				document.write(this.numero+"<br>");
+			}
+		}
+
+		let cubilete=[];
+
+		let turnos=()=>
+		{
+			for(let i=0;i<=5;i++)
+			{
+				cubilete.push(new Dado(this.numero));
+			}
+		}
+
+		let conteoTiros=(array)=>
+		{
+			let cont= [0,0,0,0,0,0];
+			for(let dada of cubilete)
+			{
+				cont[dada.numero-1]++
+			}
+			for(let i=0; i < cont.length;i++)
+			{
+				document.write("Cantidad de "+ (i+1)+" es "+ cont[i]+"<br>");
+			}
+		}
+
+		turnos();
+		cubilete.forEach(tiros=>tiros.imprimir());
+		conteoTiros(cubilete);
+	</script>
+</body>
+</html>

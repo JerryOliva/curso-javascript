@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const empleados=[
+            {
+                nombre:"Raul",
+                edad:32,
+                sueldo:[200,230,405]
+            },
+            {
+                nombre:"Asencio",
+                edad:45,
+                sueldo:[900,120,404]           
+            },
+            {
+                nombre:"Isabel",
+                edad:48,
+                sueldo:[490,304,350]
+            }
+        ]
+
+        function totSueldos({sueldo})
+        {
+            return sueldo.reduce((acumulador,suel)=>acumulador+suel);
+        }
+
+        empleados.forEach((empleado)=>console.log(totSueldos(empleado))+"<br>");
+
+    
+    </script>
+</body>
+</html>
