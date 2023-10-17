@@ -1,0 +1,32 @@
+#div-main
+{
+	background-color: coral;
+}
+
+
+.bloque-titulo
+{
+	background-color: brown;
+}
+
+#titulo1
+{
+	font-size: 99px;
+	font-family: 'Times New Roman', Times, serif;
+	color: aliceblue;
+}
+
+#subtitulo1
+{
+	color:aliceblue;
+	font-size: 26px;
+	font-family: 'Times New Roman', Times, serif;
+}
+
+#frutas
+{
+	color:aliceblue;
+	font-size: 15px;
+	font-family: 'Times New Roman', Times, serif;
+	
+}

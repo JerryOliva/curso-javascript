@@ -1,0 +1,19 @@
+#bloque-main
+{
+	background-color: dodgerblue;
+}
+
+.title1
+{
+	color: antiquewhite;
+	font-size: 44px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#subtitle1
+{
+	color: antiquewhite;
+	font-size: 33px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
