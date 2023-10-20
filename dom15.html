@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dom15.1.1.css">
+</head>
+<body>
+    <div class="bloqueMain">
+
+        <div id="encabezado">
+
+            <h1 id="titulo" >Emojis</h1>  
+        </div>
+
+        <div>
+            <p id="parrafo1">Ingresa una palabra asociada al emoji</p>
+        </div>
+         
+        <div>
+            <label for="lista">seleccione el emoji: </label>
+            <select  id="emoji">
+
+                <option value="pierna">🦿</option>
+                <option value="pito">🖕</option>
+                <option value="arabe">👳‍♂️</option>
+                <option value="corazon roto">💔</option>
+                <option value="enojo">🤬</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="palabra">Ingresa la palabra asociada: </label>
+            <input type="text" id="palabra">
+        </div>
+
+        <div>
+            <label for="verifica"></label>
+            <input type="button" value="verifica" id="verifica">
+        </div>
+
+        <div id="pie de pagina">
+            <p id="respuesta"></p>
+        </div>
+        
+        <script src="dom15.1.js"></script>
+    </div>
+</body>
+</html>
