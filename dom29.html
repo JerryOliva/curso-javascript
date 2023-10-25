@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Elevate</h1>
+
+    <div>
+        <ul id ="lista">
+           <li data-estado="completada">Amar</li>
+           <li data-estado="completada">Respirar</li>
+           <li data-estado="pendiente">Espera</li>
+           <li data-estado="pendiente">Ya casi</li>
+        </ul>
+    </div>
+    
+    <div>
+        <input type="button" value="saber mas" id="boton1">
+    </div>
+
+    <p id="resultado"></p>
+
+    <script>
+
+    document.querySelector("#boton1").addEventListener("click",()=>
+    {
+        const actividades=[...document.querySelectorAll("#lista li")];
+        //let cont=0;
+
+       // for(let actividad of actividades)
+       // {
+            //if(actividad.dataset.estado=="completada")
+            //{
+                //cont++;
+            //}
+        //}
+        //actividades.forEach(elemento=>{
+            //if(elemento.dataset.estado=="completada")
+            //{
+                //cont++
+            //}
+           
+        //})
+        
+        const cont= actividades.reduce((cont,actividad)=>actividad.dataset.estado=="completada"?cont+1:cont, 0)
+        
+    
+        alert("Cantidad de actividades completadas " + cont)
+
+    })
+
+
+
+    </script>
+</body>
+</html>

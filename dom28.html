@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dom28.css">
+</head>
+<body>
+    
+    <h1>Buscadores Web</h1>
+
+    <ul id="lista" style="list-style: none;">
+        <li><a href="https://www.google.com.mx/" target="_blank" class="item">Google</a></li>
+        <br>
+        <li ><a href="https://www.bing.com/" class="item">Bing</a></li>
+        <br>
+        <li><a href="https://mx.search.yahoo.com/?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuYmluZy5jb20v&guce_referrer_sig=AQAAAHtMoyQkUnVKeRTh0JnU5FDo4HPLfL1z3lMnqO6dEZiSSNjUm9WLEz9k-fS7K3Bsuy2SCrJ-Ryvz3BzpHodn_5_LSQAzXJXmGRzTngvyO2RfK67_GwE5yirjVM5a1nLvrLwMEe1yPvberiIIlUNQo8MZciDJsKAoP0yIQEzl0dgs" target="_blank"class="item">Yahoo</a></li>
+        <br>
+        <li><a href="https://ask.fm/" class="item">Ask</a></li>
+    </ul>
+
+    <script>
+
+        const enlaces=document.querySelectorAll("a")
+
+        enlaces.forEach(enlace=>
+        {
+            if(!enlace.hasAttribute("target"))
+            {
+                enlace.target="_blank"
+            }
+        })
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Añadir nombres con el metodo CreateElement
+    </h1>
+    <div>
+        <label for="nombre">Ingrese un nombre</label>
+        <input type="text" id="nombre">
+        <input type="button" value="Confirmar" id="confirmar">
+    </div>
+
+    <div>
+        <ul id="lista1"></ul>
+    </div>
+<script>
+
+    const nombres= document.querySelector("#nombre");
+    const listanombres= document.querySelector("#lista1");
+
+    document.querySelector("#confirmar").addEventListener("click",()=>
+    {
+        const li= document.createElement("li")
+        li.textContent=nombre.value;
+        listanombres.append(li);
+        nombre.value=" ";
+    })
+</script>
+</body>
+</html>

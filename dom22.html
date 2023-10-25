@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <label for="ancho">Ancho: </label>
+        <input type="number" min="0"max="500" id="ancho">
+    </div>
+
+    <br>
+
+    <div>
+        <label for="alto">Alto: </label>
+        <input type="number" min="0" max="500" id="alto">
+    </div>
+    <br>
+    <div>
+        <label for="color">Color de fondo: </label>
+        <input type="text" id="color" value="#ff0000">
+        <span> Ingrese el valor hexagesimal(6 caracteres)</span>
+    </div>  
+    <br>
+    <div>
+        <input type="button" value="actualizar" id="render">
+    </div>
+    <br>
+    <div class="bloque1" style="width: 200px; height: 200px; background-color:#ff0000;"></div>
+    
+    <script src="dom22.js"></script>
+</body>
+</html>

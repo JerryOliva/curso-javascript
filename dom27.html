@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div>
+    <input type="button" value="Atras" id="atras">
+    <input type="button" value="Siguiente" id="siguiente">
+</div>
+
+<div>
+    <img id="imagenes" style="scale: 0.5;"src="dom26.img/1.jpg" alt="estrellas">
+</div>
+
+
+<script>
+
+    let seleccion=1;
+    const imagen=document.querySelector("#imagenes");
+    
+
+    document.querySelector("#atras").addEventListener("click",()=>
+    {
+        if(seleccion>1)
+        {
+            seleccion--
+            mostrar(seleccion);
+            deshabilitar();
+        }
+    })
+
+    document.querySelector("#siguiente").addEventListener("click",()=>
+    {
+        if(seleccion<4)
+        {
+            seleccion++;
+            mostrar(seleccion);
+            deshabilitar();
+
+        }
+    })
+    mostrar=(seleccion)=>
+    {
+        imagen.src=`dom26.img/${seleccion}.jpg`;
+    }
+
+    deshabilitar=()=>
+    {
+        if(seleccion==1)
+        {
+            document.querySelector("#atras").disabled=true
+        }
+
+        if(seleccion==3)
+        {
+            document.querySelector("#siguiente").disabled=false;
+        }
+        if(seleccion == 2)
+        {
+            document.querySelector("#atras").disabled=false;
+        }
+        if(seleccion==4)
+        {
+            document.querySelector("#siguiente").disabled=true
+        }
+    }
+
+</script>
+</body>
+</html>

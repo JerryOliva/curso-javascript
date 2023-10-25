@@ -1,0 +1,33 @@
+h1
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+}
+
+.menu
+{
+    list-style: none;
+    display: flex;
+    flex-direction: row ;
+}
+
+.menu li
+{
+
+    margin-right: 20px;
+}
+
+.menu-izquierda
+{
+    justify-content: flex-start;
+}
+
+.menu-derecha
+{
+    justify-content:flex-end;
+    
+}
+
+.menu-espaciado
+{
+    justify-content: space-between;
+}

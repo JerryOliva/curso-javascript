@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Tipos de Inputs</h1>
+
+    <div>
+        <label for="tipos"><Em></Em>lige el input: </label>
+        <select id="tipos"></select>
+    </div>
+    <div> 
+        <input type="button" value="Mostrar" id="mostrar">
+    </div>
+    <div>
+        <input type="text"id="ejemplo">
+    </div>
+
+    <div>
+        <p id="descripcion1"></p>
+    </div>
+    <script>
+
+    const inpuTipos=
+    [
+        { tipo: "text", descripcion:"campo de texto para introducir texto"},
+        { tipo: "number", descripcion:"campo de texto para introducir numero"},
+        {tipo:"email", descripcion:"campo de texto para introducir direcciones de correo electrónico"},
+        { tipo:"password", descripcion:"campo de texto para introducir contraseñas"},
+        { tipo:"checkbox", descripcion:"Casilla de verificación para seleccionar una opción"},
+        { tipo:"radio", descripcion:"Botones de radio para seleccionar una opción"},
+        {tipo:"submit",descripcion:"Botón para enviar formulario"},
+        {tipo:"reset", descripcion:"Botón para resetear un formulario"},
+        {tipo:"file",descripcion:"campo para seleccionar un archivo para cargar"},
+        {tipo:"date",descripcion:"campo para introducir una fecha"},
+        {tipo:"datetime-local",descripcion:"campo para introducir una fecha y hora local"},
+        {tipo:"time", descripcion:"campo para introducir una hora"},
+        {tipo:"week", descripcion:"campo para introducir una semana del año"},
+        {tipo:"month", descripcion:"campo para introducir un mes y año "},
+        {tipo:"range", descripcion:"campo para introducir un valor numérico en un rango"},
+        {tipo:"search",descripcion:"campo de búsqueda para buscar dentro del sitio o aplicación"},
+        {tipo:"tel",descripcion:"campo de texto para introducir un número de teléfono"},
+        {tipo:"url", descripcion:"campo de texto para introducir una dirección URL"},
+        {tipo:"color",descripcion:"campo para seleccionar un color"}
+    ]
+
+    document.querySelector("#tipos").innerHTML= inpuTipos.map(componente=>`<option value="${componente.tipo}">${componente.tipo}</option>` );
+
+    document.querySelector("#mostrar").addEventListener("click",()=>
+    {
+        const tiposs=document.querySelector("#tipos").value
+        document.querySelector("#ejemplo").type=tiposs;
+        document.querySelector("#descripcion1").textContent=  inpuTipos.find(component=>component.tipo==tiposs).descripcion;
+    })
+
+    
+
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dom30.css">
+</head>
+<body>
+    
+    <div>
+        <ul id="lista">
+            <li>1</li>
+            <li>2</li>
+            <li>-1</li>
+            <li>-2</li>
+            <li>3</li>
+            <li>-3</li>
+
+        </ul>
+    </div>
+
+    <script>
+        let lista1=document.querySelector("#lista");
+
+       // for(let nodo of lista1.children)
+       // {
+           // const v=parseInt(nodo.textContent)
+           // if(v<0)
+           // {
+                //nodo.classList.add("negativo")
+            //}
+        //}
+
+        let raiz=lista1.firstElementChild
+        
+        while(raiz!=null)
+        {
+            const valor=parseInt(raiz.textContent)
+            if(valor<0)
+            {
+                raiz.classList.add("negativo");
+            }
+            raiz=raiz.nextElementSibling;
+        }
+       
+    </script>
+</body>
+</html>
