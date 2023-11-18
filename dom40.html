@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        #conjunto
+        {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .cuadro 
+        {
+            width: 123px;
+            height: 123px;
+            border: solid;
+            margin: 10px;
+            cursor: pointer;
+            border: 3px solid black;
+
+        }
+
+        .rojo
+        {
+            background-color: rgba(255, 0, 0, 0.479);
+        }
+
+        .verde 
+        {
+            background-color: rgb(38, 0, 128);
+        }
+
+        .azul
+        {
+            background-color: wheat;
+        }
+    </style>
+</head>
+<body>
+    <div id="conjunto">
+    <div class="cuadro rojo" data-color="rojo"></div>
+    <div class="cuadro verde" data-color="verde"></div>
+    <div class="cuadro azul" data-color="azul"></div>
+    </div>
+
+    <script>
+
+        const nodeList= document.querySelectorAll("#conjunto div");
+
+       nodeList.forEach(cuadro=>
+       {
+        cuadro.addEventListener("mouseenter", evento=>
+        {
+            document.querySelector("body").classList.add(evento.target.dataset.color)
+        })
+       })
+
+       nodeList.forEach(cuadro=>
+       {
+        cuadro.addEventListener("mouseleave", evento=>
+        {
+            document.querySelector("body").classList.remove(evento.target.dataset.color);
+        })
+       })
+       
+    </script>
+</body>
+</html>

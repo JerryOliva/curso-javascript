@@ -4,8 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="dom32.css">
 </head>
 <body>
+
+
+    <h1>Tablas html</h1>
+    <div>
+
+    <label for="nombres">Ingrese un nombre: </label>
+    <input type="text" id="nombres">
+    <br>
+    <label for="email">Ingrese un email: </label>
+    <input type="text" id="email">
+    <br>
+    <label for="clave">Ingrese una clave: </label>
+    <input type="password" id="clave">
+    <br>
+    <br>
+    <input type="button" value="Confirmar" id="confirmar">
+        
+    </div>
+    <br>
+    <div>
+        <table style=" border-collapse: collapse; width: 100%; ">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Clave</th>
+                </tr>
+            </thead>
+            <tbody id="users"></tbody>
+    
+        </table>
+    </div>
+
+    <script>
+
+        const nombre=document.querySelector("#nombres");
+        const email=document.querySelector("#email");
+        const clave=document.querySelector("#clave");
+        const usuarios=document.querySelector("#users");
+
+        document.querySelector("#confirmar").addEventListener("click",()=>
+        {
+            const tr=document.createElement("tr");
+            tr.innerHTML=`<td>${nombre.value}</td><td>${email.value}</td><td> ${clave.value}</td>` 
+            usuarios.append(tr);
+            
+            
+        })
+    </script>
+    
     
 </body>
 </html>

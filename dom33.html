@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Adivinar
+    </h1>
+
+    <div>
+        <label for="numero">Adivine el numero que piensa la maquina(1-100)</label>
+        <input type="number" id="numero">
+        <input type="button" value="Verificar" id="verificar">
+    </div>
+
+    <div>
+        <p id="azares"></p>
+    </div>
+    <div>
+
+        <ol id="intenta">
+        </ol>
+        
+    </div>
+
+    <script>
+
+        const numero=document.querySelector("#numero");
+        const intentos=document.querySelector("#intenta");
+        let azar=Math.floor(Math.random()*100)+1;
+       
+        document.querySelector("#verificar").addEventListener("click",()=>
+        {
+            const li=document.createElement("li");
+            const entrada= parseInt(numero.value);
+          
+        
+            if(entrada==azar)
+            {  
+                li.textContent="¡Adivinaste, estas de suerte! ";
+                document.querySelector("#azares").textContent="Usuario el numero que esta en mi procesador es: "+ azar;
+            }
+            else 
+            {
+                if(entrada>azar)
+                {
+                    li.textContent="El numero que pense es menor de "+ entrada
+                }
+                else 
+                {
+                    li.textContent="El numero que pense es mayor de "+ entrada
+                }
+                numero.value=" "
+            }
+            intentos.append(li)
+
+
+
+        })
+    </script>
+
+</body>
+</html>

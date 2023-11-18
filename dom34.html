@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Eliminar elementos de una lista</h1>
+
+    <div>
+        <ol id="frases">
+ 
+        </ol>
+    </div>
+    <div>
+        <label for="borrar">Haz click para borrar frases</label>
+        <input type="button" id="borrar" value="Borrar">
+    
+    </div>
+
+    <script>
+
+        const frases= [
+            { frase: " El verdadero poder surge en el silencio más sincero", autor: "anonimo"},
+            {
+                frase: "El sentimiento es un malestar constante pero un placer irreprochable" , autor: "anonimo"
+            },
+
+            {
+                frase: "Decidi escribir mis propias ideas y no engalanarme de lo ajeno" , autor: "anonimo"
+            },
+            {
+                frase: "En un mundo donde quieren copias de otras copias. El anarquismo puro es; ser" , autor: "anonimo"
+            },
+            {
+                frase: "Te invito a olvidar tu importancia,  serás feliz" , autor: "anonimo"
+            },
+
+            {
+                frase: "El silencio solo puede ser conocido por alguien que transita su sendero" , autor: "anonimo"
+            }
+        ];
+
+        
+        document.querySelector("#frases").innerHTML= frases.map( fraser => `<li>${fraser.frase} - ${fraser.autor}</li>`)
+
+        document.querySelector("#borrar").addEventListener("click",()=>
+        {
+            const lista1=document.querySelectorAll("#frases li");
+
+            lista1.forEach(frase=>
+            {
+                if(frase.textContent.toUpperCase().includes("SILENCIO"))
+                {
+                    frase.remove();
+                }
+            })
+            
+        })
+
+
+
+    </script>
+</body>
+</html>

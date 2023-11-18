@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Presione ctrl + alt + h para ayuda</p>
+    </div>
+
+    <script>
+        document.querySelector("body").addEventListener("keydown", (tecla)=>
+        {
+            if(tecla.ctrlKey && tecla.altKey && tecla.key=="h")
+            {
+                alert("Estoy contigo");
+            } 
+        })
+    </script>
+</body>
+</html>

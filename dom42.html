@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .raton
+        {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div id="bloque-main">
+
+        <label for="cantidad">Ratas pisadas:</label> <span id="cantidad">0</span>
+    </div>
+
+ 
+
+    <script>
+
+
+        let insertarImg=()=>
+        {
+            for(let i=1 ; i<=20; i++)
+            {
+
+              const cantidad=document.querySelector("#cantidad");
+              const img= document.createElement("img");
+              img.classList.add("raton")
+                const ancho=innerWidth-80;
+                const alto= innerHeight-80;
+                const posx= Math.floor(Math.random()*ancho);
+                const posy= Math.floor(Math.random()*alto);
+                img.style.left= posx +"px";
+                img.style.right=posy +"px";
+                img.src="rat.png";
+                const grados = Math.floor(Math.random()*360);
+                img.style.transform=`rotation${grados}deg`
+                document.body.append(img);
+                img.addEventListener("click",(evento)=>
+                {
+                    evento.target.remove(img)
+                    const cont= parseInt(cantidad.textContent)+1;
+                    cantidad.textContent=cont;
+                })
+                
+
+                
+            }
+
+
+        }
+
+        insertarImg();
+
+    </script>
+</body>
+</html>

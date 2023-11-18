@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <label for="nombre">Ingresa un nombre</label>
+        <input type="text" id="nombre">
+    </div>
+
+    <p id="imprimir"></p>
+    
+    <script>
+        const nombre= document.querySelector("#nombre");
+        const imprimir=document.querySelector("#imprimir");
+
+        nombre.addEventListener("keyup",()=>
+        {
+            imprimir.textContent=nombre.value;
+        })
+    </script>
+</body>
+</html>

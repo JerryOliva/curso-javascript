@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="numero">Ingrese un numero entero</label>
+        <input type="number" id="numero">
+    </div>
+    <P id="resultado"></P>
+    <script>
+        document.querySelector("#numero").addEventListener("keydown",(tecla)=>
+        {
+        
+            if(tecla.key=="Enter")
+            {
+                serieNum(parseInt(document.querySelector("#numero").value))
+            }
+        }) 
+
+        let serieNum=(num)=>
+        {
+            let string=" ";
+           
+                for(let i=1;i<=num; i++)
+                {
+                    if(i==num)
+                    {
+                        string+= i;  
+                    }
+                    else 
+                    {
+                        string+= i+"-"
+                    }
+                }
+            document.querySelector("#resultado").textContent=string;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div>
+<textarea id="areaTexto" cols="60" rows="25" maxlength="50"></textarea>
+</div>
+
+<p>Cantidad de caracteres: <span id="conteo" ></span></p>
+
+<script>
+
+const parrafo=document.querySelector("#areaTexto");
+const conteo1=document.querySelector("#conteo");
+parrafo.addEventListener("keydown",()=>
+{
+    conteo1.textContent= parrafo.value.length
+
+})
+
+</script>
+
+</body>
+</html>
