@@ -1,0 +1,49 @@
+#title1
+{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    font-size: 45px;
+}
+
+#subtitle1
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 33px;
+}
+
+#cuadro1
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+}
+
+#numero
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 57.6px;    
+}
+
+#probar
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buton1
+{
+    font-family: 'Courier New', Courier, monospace;
+}
