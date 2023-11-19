@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+	<form id="forma1" method="post"action="">
+
+		<div>
+			<label for="nombre">ingrese su nombre</label>
+		<input type="text" id="nombre" name="nombre">
+		</div>
+
+		<div>
+			<label for="correo">Ingrese su email</label>
+		<input type="text"  id="correo" name="correo">
+		</div>
+		
+		<input type="submit" value="confirmar">
+	</form>
+
+
+	<script>
+	document.querySelector("#forma1").addEventListener("submit", event=>
+	{
+		const nombre=document.querySelector("#nombre");
+		const correo=document.querySelector("#correo");
+
+		if(nombre.value==''|| correo.value=='')
+		{
+			alert("Ingrese los 2 campos")
+			event.preventDefault();
+		}
+	})
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="frutas">
+    <option value="">Seleccione una fruta</option>
+    <option value="3.2">Guayaba</option>
+    <option value="6">Pera</option>
+    <option value="7.9">Aguacate</option>
+    </select>
+
+    <div>
+        <p> El precio de la fruta es: <span id="precio"></span></p>
+    </div>
+
+    <div>
+        <label for="cuotas"></label>
+        <input type="range" min="1" max="10" value="1" id="cuotas">
+        <span id="cantidadCuotas">1</span>
+    </div>
+    <br>
+    <div>
+
+        <input type="button" id="total" value="Total">
+
+    </div>
+    
+    <p id="resultado"></p>
+    <script>
+        const fruta=document.querySelector("#frutas");
+        const precio=document.querySelector("#precio");
+        const cuotas=document.querySelector("#cuotas");
+        const cantidadCuotas=document.querySelector("#cantidadCuotas");
+        const resultado=document.querySelector("#resultado");
+
+        fruta.addEventListener("change",()=>
+        {
+            if(fruta.value!=" ")
+            {
+                precio.textContent=fruta.value
+            }
+            else 
+            {
+                precio.textContent=" ";
+            }
+        })
+        
+        cuotas.addEventListener("input", ()=>
+        {
+            cantidadCuotas.textContent=cuotas.value
+        })
+
+        document.querySelector("#total").addEventListener("click",()=>
+        {
+            let total1=
+            cuotas.value*fruta.value;
+            resultado.textContent="El costo total es: "+ total1;
+        })
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="parrafo1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ut assumenda iure, nobis accusantium nisi autem non, qui praesentium exercitationem quaerat? Molestiae, fugiat maiores dolorum corporis voluptates eos asperiores quos.</p>
+
+    <input type="range" min="12" max="72" value="12" id="selectorFuente">
+    <span id="fuente">12</span>
+
+
+    <script>
+        const parrafo=document.querySelector("#parrafo1");
+        const selector=document.querySelector("#selectorFuente");
+        const fuente=document.querySelector("#fuente");
+
+        selector.addEventListener("change",()=>{
+            parrafo.style.fontSize=selector.value+"px";
+            fuente.textContent=selector.value;
+        })
+    </script>
+</body>
+</html>
