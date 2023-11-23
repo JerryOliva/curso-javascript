@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum</title>
+
+</head>
+<body>
+
+<div id="content">
+
+</div>
+
+<p id="result">0</p>
+
+<script>
+
+    inputs();
+
+    function inputs()
+    {
+        
+        let charge=" ";
+
+        for(let i=0;i<10;i++)
+        {
+            charge+="<div> <input type='number'></input></div>"
+        }
+    
+        document.querySelector("#content").innerHTML=charge;
+        let entries=document.querySelectorAll("#content input");
+        let resultado=document.querySelector("#result");
+    
+
+        document.querySelector("#content").addEventListener("input", event =>
+        {
+            
+            let sum=0;
+            entries.forEach(element=>
+            {
+                if(element.value!='')
+                {
+                    sum+=parseFloat(element.value);
+                }
+                
+            })
+        resultado.textContent=sum.toFixed(2);
+        })
+
+    }
+</script>
+
+    
+</body>
+</html>

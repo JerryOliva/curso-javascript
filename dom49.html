@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body
+        {
+            
+            background-color: blue;
+            box-sizing: border-box;
+            
+             
+        }
+        
+        #anuncio
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 34px;
+            color: wheat
+        }
+    </style>
+</head>
+<body>
+    
+    <div >
+
+        <p id="anuncio"></p>
+
+    </div>
+
+    <script>
+
+        let tiempo;
+        let cant=1;
+        let mensaje="Descubre la forma verdadera de vivir"
+        let spot=document.querySelector("#anuncio");
+
+
+        tiempo= setInterval(()=>
+        {
+            cargarSpot();
+        },100)
+
+        function cargarSpot ()
+        {
+            let texto = mensaje.slice(0,cant);
+            spot.textContent=texto;
+            if(cant>mensaje.length)
+            {
+                clearInterval(tiempo)
+                
+                setTimeout(()=>
+                {   
+                    spot.textContent=" "
+                    cant=1;
+                    tiempo=setInterval(()=>
+                {
+                    cargarSpot();
+                },100)
+                },3000)     
+            }
+            cant++;
+        }
+
+
+
+
+    </script>
+</body>
+</html>

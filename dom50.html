@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resize</title>
+</head>
+<body>
+    
+    <div>
+        <p>Ancho:<span id="x"></span></p>
+        <p>Alto:<span id="y"></span></p>
+    </div>
+
+    <script>
+
+        const x=document.querySelector("#x");
+        const y=document.querySelector("#y");
+
+        window.addEventListener("resize",()=>
+        {
+            x.textContent=window.innerWidth;
+            y.textContent=window.innerHeight;
+            const color= window.innerWidth/ screen.width*255
+            document.body.style.backgroundColor=`rgb(${color},${color},${color})`
+        })
+    </script>
+</body>
+</html>
