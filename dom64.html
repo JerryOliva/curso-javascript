@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <label for="numeros">Ingrese una serie de numeros separados por coma:</label>
+        <input type="text" id="numeros">
+        <input type="submit" value="Sumar" id="sumar">
+    </div>
+
+    <div>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+
+        const numeros = document.querySelector("#numeros");
+        const resultado = document.querySelector("#resultado");
+
+      
+
+            document.querySelector("#sumar").addEventListener("click", event=>
+            {
+         
+        try
+        {
+
+            const serie = ` [${numeros.value}]`;
+            const arreglo= JSON.parse(serie);
+            let suma= arreglo.reduce((acum , valor)=> acum+valor)
+           alert(suma);
+    
+        }
+        catch(error)
+        {
+            alert("Ingresar numero separados por coma")
+        }
+    
+             })
+        
+    </script>
+</body>
+</html>

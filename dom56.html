@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+    <label for="tarea">Ingresa la tarea:</label>
+    <input type="text" id="tarea">
+    <input type="button" id="agregar" value="Agregar">
+    </div>
+    
+    <div>
+        <ul id="items"></ul>
+    </div>
+
+    <div>
+        <button id="boton1">JSON FORMAT</button>
+    </div>
+
+
+    <script>
+
+        let cargaItem=()=>
+        {
+
+            const tareas=document.querySelector("#items")
+            const tarea=document.querySelector("#tarea");
+
+            document.querySelector("#agregar").addEventListener("click",()=>
+            {
+                let li=document.createElement("li");
+                li.textContent=tarea.value;
+                tareas.appendChild(li);
+                tarea.value=" ";
+            })
+
+            
+
+           document.querySelector("#boton1").addEventListener("click",()=>
+           {
+            const lista=document.querySelectorAll("#items li");
+            let array=[];
+            lista.forEach(elemento=> 
+            {
+                array.push( { tarea:elemento.textContent});
+            })
+            let formato=JSON.stringify(array);
+            alert(formato);
+           })
+        }
+
+
+
+        cargaItem();
+    </script>
+</body>
+</html>

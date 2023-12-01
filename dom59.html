@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<style>
+		li{
+			margin:5px;
+		}
+
+		p
+		{
+			display: flex;
+			align-items: center ;
+		}
+		
+	</style>
+</head>
+<body>
+	<div >
+		<ul id="comarcas"></ul>
+	</div>
+	
+	<div> <p id="response"></p></div>
+	<script>
+	const provincias = [
+      "Buenos Aires",
+      "Catamarca",
+      "Chaco",
+      "Chubut",
+      "Córdoba",
+      "Corrientes",
+      "Entre Ríos",
+      "Formosa",
+      "Jujuy",
+      "La Pampa",
+      "La Rioja",
+      "Mendoza",
+      "Misiones",
+      "Neuquén",
+      "Río Negro",
+      "Salta",
+      "San Juan",
+      "San Luis",
+      "Santa Cruz",
+      "Santa Fe",
+      "Santiago del Estero",
+      "Tierra del Fuego",
+      "Tucumán"
+    ]
+	
+
+	const list= provincias.map(provincia=> 
+		`<li><a href="https://scratchya.com.ar/cursojs/recuperartemperatura.php?provincia=${provincia}">${provincia}</a></li>`
+	)
+	document.querySelector("#comarcas").innerHTML=list.join(" ");
+	
+	
+		const lista = document.querySelectorAll("#comarcas a");
+		lista.forEach(enlace =>
+		{
+			enlace.addEventListener("mouseenter",evento=>
+			{
+				evento.preventDefault();
+				recuperarTemperatura(evento.target.href);
+			})
+		})
+
+
+	function recuperarTemperatura(evento)
+	{
+		fetch(evento)
+		.then(respuesta=>respuesta.json())
+		.then(provincia=> mostrar(provincia))
+	}
+
+	function mostrar(provincia)
+	{
+		document.querySelector("#response").textContent=`En ${provincia.provincia} la temperatura es de ${provincia.temperatura}`;
+	}
+	
+		
+	</script>
+</body>
+
+
+</html>

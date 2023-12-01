@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+	<div>
+
+		<label for="insertar">Ingrese una clave</label>
+		<input type="text" id="insertar">
+		<button id="agregar">Agregar</button>
+
+	</div>
+
+	<div>
+		<ul id="claves"></ul>
+	</div>
+
+	<script>
+
+
+		const claves= document.querySelector("#insertar");
+		const lista= document.querySelector("#claves");
+		const entrada=document.querySelector("#agregar");
+
+		entrada.addEventListener("click", event=>
+		{
+			cargarLista();
+		})
+
+		function cargarLista()
+		{
+			const li= document.createElement("li");
+			li.textContent=claves.value;
+			lista.append(li);
+			claves.value=" ";
+		}
+
+		setTimeout(()=> verificar(),15000)
+
+		function verificar()
+		{
+			fetch("https://scratchya.com.ar/cursojs/verificarfortalezaclaves.php", 
+			{
+				method: 'POST',
+				body: retornoJson()
+			})
+			.then(response=>response.json())
+			.then(passwords=>
+			{
+				entrada.disabled=true;
+				const insertarArreglo= passwords.map(clave=> `<li> ${clave.clave} : ${clave.fortaleza} </li>`)
+				lista.innerHTML=insertarArreglo.join(" ");
+			})
+		}
+
+		function retornoJson()
+		{
+			const arreglo = [...document.querySelectorAll("#claves li")];
+			const rJson= arreglo.map(clave=> clave.textContent);
+			return JSON.stringify(rJson);
+		}
+	</script>
+    
+</body>
+</html>

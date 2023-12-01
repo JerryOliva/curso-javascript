@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+		<style>
+			table
+			{
+				text-align: center;
+				margin: 10px;
+				border-collapse: collapse;
+				box-shadow: 2px black;
+
+
+			}
+		</style>
+</head>
+<body>
+    
+    <table>
+        <thead>
+            <tr>
+
+                <th>pais</th>
+                <th>capital</th>
+                <th>idioma</th>
+                <th>moneda</th>
+                <th>población</th>
+								<th>bandera</th>
+                <th>limites</th>
+            </tr>
+        </thead>
+        <tbody id="paisesLista"></tbody>
+    </table>
+    
+    <script>
+
+        fetch("https://www.scratchya.com.ar/cursojs/recuperarpaises.php")
+        .then(respuesta=>respuesta.json())
+        .then(paises=> imprimir(paises))
+
+				function imprimir(paises)
+				{
+					 const filas= paises.map(pais=>
+					 `<tr>
+							<td>${pais.nombre}</td>
+							<td>${pais.capital}</td>
+							<td>${pais.idioma}</td>
+							<td>${pais.moneda}</td>
+							<td>${pais.poblacion}</td>
+							<td src="${pais.bandera}"></td>
+							<td>${pais.limites}</td>
+						</tr>
+					 `)
+					 document.querySelector("#paisesLista").innerHTML=filas.join(" ");				}
+
+
+
+    </script>
+</body>
+</html>

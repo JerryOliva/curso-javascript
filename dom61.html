@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <label for="entrado"> Ingrese las etiquetas HTML</label>
+        <input type="text" id="entrado">
+    </div>
+
+    <div>
+        <ul id="etiquetas">
+
+        </ul>
+    </div>
+
+
+    <script>
+
+        const entrada=document.querySelector("#entrado");
+        const lista=document.querySelector("#etiquetas");
+
+        entrada.addEventListener("keyup",event=>
+        {
+            if(event.key=="Enter")
+            {
+
+                cargarLista();
+   
+            }
+        })
+            function cargarLista()
+            {
+                
+                const li=document.createElement("li");
+                li.textContent=entrada.value;
+                lista.append(li);
+                entrada.value="";  
+
+            }
+
+            setTimeout(()=> validarHTML(),15000)
+
+            function validarHTML()
+            {
+               fetch("https://scratchya.com.ar/cursojs/enviaretiquetashtml.php", 
+               {
+                method: 'POST',
+                body: jsonReturn()
+               })
+               .then(response=>response.json())
+               .then(etiquetas=>
+               {
+                entrada.disabled=true;
+                const listo=etiquetas.map(etiqueta=> `<li> ${etiqueta.nombre} : ${etiqueta.descripcion}</li>`);
+                lista.innerHTML=listo.join("");
+               })
+            }
+
+            function jsonReturn()
+            {
+                const array = [...document.querySelectorAll("#etiquetas li")];
+                const rJson=array.map(etiqueta=> etiqueta.textContent)
+                return JSON.stringify(rJson);
+            }
+
+    </script>
+</body>
+</html>

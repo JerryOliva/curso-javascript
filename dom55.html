@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+	<div>
+		<label for="nombre">Ingresa el nombre</label>
+		<input type="text" id="nombre">
+	</div>
+
+	<div>
+		<label for="clave">Ingrese una clave</label>
+		<input type="password" id="clave">
+	</div>
+
+	<div>
+		<button id="boton1">Generar formato JSON</button>
+	</div>
+
+	<div>
+		<p id="respuesta"></p>
+	</div>
+
+	<script>
+
+		document.querySelector("#boton1").addEventListener("click",()=>
+		{
+			const nombre=document.querySelector("#nombre").value;
+			const clave=document.querySelector("#clave").value;
+
+			let user= {
+				nombre,
+				clave
+			};
+
+			let cadena=JSON.stringify(user);
+
+			document.querySelector("#respuesta").textContent=cadena;
+
+			let userParse=JSON.parse(cadena);
+			console.log(userParse)
+		})
+	</script>
+</body>
+</html>

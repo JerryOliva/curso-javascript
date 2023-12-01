@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <form id="forma1">
+            <label for="montoMin">Ingrese el monto mínimo:</label>
+            <input type="number" id="montoMin" name="montomin">
+            <br>
+            <label for="montoMax">Ingrese el monto máximo:</label>
+            <input type="number" id="montoMax" name="montomax"> 
+            <br>
+            <br>
+            <input type="submit" id="verificar" value="consultar">
+           
+        </form>
+    </div>
+
+    <div>
+        <ul id="response"></ul>
+    </div>
+
+    <script>
+
+        const datos1=document.querySelector("#forma1");
+        const lista=document.querySelector("#response");
+
+        datos1.addEventListener("submit",(evento)=>
+        {
+            evento.preventDefault()
+            const datosForma= new FormData (datos1);
+            fetch("https://www.scratchya.com.ar/cursojs/consultarpormonto.php",
+            {
+                method: 'POST',
+                body: datosForma
+            })
+            .then(respuesta => respuesta.json())
+            .then(productos =>
+            {
+                const li= productos.map(producto=>
+                ` <li> nombre: ${producto.nombre} precio: ${producto.precio}</li>`)
+                lista.innerHTML=li.join("");
+            })
+        })
+    </script>
+</body>
+</html>
