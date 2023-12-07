@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        
+
+        let arreglo= [ 54, 2 ,53,65,23,1]; 
+
+
+      
+        let ordenarBurbuja=(arreglo)=>
+        {
+            arreglo.sort((a,b)=> a-b);
+            return arreglo
+        }
+        
+        document.write("Arreglo desordenado : "+ arreglo +"<br>")
+
+        ordenarBurbuja(arreglo);
+        document.write("Arreglo Ordenado:"+ arreglo);
+        
+
+    </script>
+</body>
+</html>

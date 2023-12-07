@@ -7,32 +7,82 @@
 		
 		<style>
 
-			#area 
-			{
-				width: 300px;
-				height: 300px ;
-				margin: 10px;
-			}
 
+			body 
+			{
+				display: flex;
+				flex-direction: row;
+				
+			}
+			
+			#area {
+				height: 30vw;
+				width: 50vw;
+			}
 			#validar
 			{
 				margin: 10px;
+			}
+
+			.correcto
+			{
+				justify-content: center;
+				background-color: green;
+				color: white;
+			}
+
+			.incorrecto 
+			{
+				justify-content: center;
+				background-color: red;
+				color: black;
 			}
 		</style>
 
 </head>
 <body>
-	 		<h1>Validación de Archivos JSON</h1>
+	 		<h1>VALIDACIÓN DE ARCHIVOS JSON</h1>
     <div>
 
 			<div>
-				<input type="textarea" id="area">
+				<textarea name="area" id="area"></textarea>
 			</div>
 
 			<div>
 				<input type="button" id="validar" value="Validar">
 			</div>
 
+			<div>
+				<p id="resultado"></p>
+			</div>
+
 		</div>
+
+		<script>
+
+			const codigo=document.querySelector("#area")
+			let resultado= document.querySelector("#resultado")
+
+			document.querySelector("#validar").addEventListener("click", event=>
+			{
+				try
+				{
+					 let arreglo= JSON.parse(codigo.value);
+						
+						
+						resultado.classList.add("correcto")
+						resultado.textContent=`Formato JSON valido `
+										
+					} 
+	
+				catch (error)
+				{
+
+						resultado.classList.add("incorrecto")
+						resultado.textContent=`Formato JSON invalido `
+				}
+			})
+
+		</script>
 </body>
 </html>

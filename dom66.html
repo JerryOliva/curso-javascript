@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+    class persona 
+    {
+        constructor (nombre , edad)
+        {
+            this.nombre= nombre;
+            this.edad = edad;
+            this. trabajo= "sin trabajo"
+        }
+        
+        imprimir()
+        {
+            document.write(` ${this.nombre} ${this.edad} ${this.trabajo}`)
+        }
+
+        asignarEmpleo(empleo)
+        {
+            if(this.edad<14)
+            {
+                throw new Error("Los menores de edad no trabajan");
+            }
+            this.trabajo=empleo;
+        }
+    }
+
+    const persona1 = new persona ("Edmundo", 34)
+    try 
+    {
+        persona1.asignarEmpleo("ubisoft");
+      
+    }
+    catch(error)
+    {
+        alert(error.message)
+     
+
+    }
+    finally
+    {
+        persona1.imprimir()
+    }
+      
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let arreglo =[2,34,5,24,67,41,1];
+
+        function ordenar(arre)
+
+        {
+            let n=arre.length-1
+            for(let i=0; i<n; i++)
+            {
+                
+                
+                for( let k=0; k<n-i;k++)
+                {
+                    
+                    if(arre[k]>arre[k+1])
+                    {
+                        let aux=arre[k]
+                        arre[k]=arre[k+1]
+                        arre[k+1]=aux;
+                    }
+                }
+            }
+            return arre
+        }
+
+        document.write("Impresión de arreglo: "+ arreglo + "<br>")
+
+        document.write("Impresión arreglo ordenado: "+ ordenar(arreglo));
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+        function factorialSuma (x)
+        {
+            if(x>0)
+            {
+                const suma= x + factorialSuma(x-1)
+                return suma
+            }
+            else 
+            {
+                return 0;
+            }
+        }
+
+        console.log(` La suma de 1 a 5 es ${factorialSuma(5)}`)
+
+
+
+        function factorialMulti (x)
+        {
+            if(x>1)
+            {
+                const multiplicacion= x * factorialMulti(x-1);
+                return multiplicacion;
+            }
+            else 
+            {
+                return 1;
+            }
+        }
+
+        console.log(` el factorial de 4 es ${factorialMulti(4)}`)
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+
+body
+{
+    background-color: rgb(32,33, 180);
+}
+h1
+{
+    font-family: Helvetica, Arial ,sans-serif;
+    font-size: 9vw;
+    color:white;
+}
+h2
+{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 400;
+    color: white;
+}
+
+#imagen1
+{
+    position: absolute;
+    scale: 40%;
+    left: 40%;
+    top: -26%;
+}
+
+#paises
+{
+    color:white
+}
