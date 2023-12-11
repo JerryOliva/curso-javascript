@@ -3,9 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Map dare</title>
+
 </head>
 <body>
+
+    <h1> Check window Console to get result</h1>
+
+    <script>
+        const mapa= new Map()
+        let cadena= " La grandeza la confunden con soberbia, la humildad con margen y no me extraña que el hombre confunda su sed de deseo con el enorme placer de amar"
+        let array=cadena.split(" ");
+        
+        for(let palabra of array)
+        {
+            if(mapa.has(palabra))
+            {
+                mapa.set( palabra , mapa.get(palabra)+1)
+            }
+            else 
+            {
+                mapa.set(palabra, 1)
+            }
+        }
+
+        const array1= [...mapa]
+
+        array1.sort((a,b)=> b[1]-a[1]);
+
+        console.log(mapa);
+        console.log(array1);
+
+    </script>
     
 </body>
 </html>
