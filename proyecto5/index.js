@@ -12,10 +12,34 @@ let cambioColor=()=>
     
 }
 
-document.querySelector("#union").innerText=unionConjuntos();
+document.querySelector("#union").innerHTML="Lenguajes que conocen los socios "+"<br>"+ unionConjuntos();
+
+document.querySelector("#interseccion").innerText=" Lenguaje común entre socios " +interseccionConjuntos();
+
+
+let cargaEmail=()=>
+{
+    const email= document.querySelector("#email");
+
+    document.querySelector("#confirmar").addEventListener("click",()=>
+    {
+        localStorage.setItem("email", email.value)
+    })
+
+    const actual= localStorage.getItem("email");
+
+    if(actual!=null)
+    {
+        email.value=actual;
+    }
+}
+
+
+
 
 
 cambioColor();
+cargaEmail();
 
-
+import { interseccionConjuntos } from "./conjuntos.js";
 import unionConjuntos from "./conjuntos.js";
