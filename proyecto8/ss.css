@@ -1,0 +1,15 @@
+#container
+{
+    height: 70vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#item1
+{
+    font-size: 
+    clamp(10px, 60% ,500px);
+}

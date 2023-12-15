@@ -1,0 +1,44 @@
+body{
+
+    background-color: tomato;
+}
+
+
+#container
+{
+    height: 200px;
+    width: innerWidth;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#item1
+{
+    color:antiquewhite;
+}
+
+#item2
+{
+    color:antiquewhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+   
+}
+
+#item3
+{
+    color:antiquewhite;
+    height: 50px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     
+}
+
+#resultado
+{
+    color:antiquewhite;
+}
